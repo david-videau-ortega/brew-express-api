@@ -1,0 +1,10 @@
+name: Brew Express
+services:
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: brew-express
+    ports:
+      - "5432:5432"

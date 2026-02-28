@@ -6,7 +6,9 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getEnvironment(): string {
-    return this.appService.getEnvironment();
+  async getEnvironment(): Promise<string> {
+    const timestamp = await this.appService.getTimestamp();
+    const environment = this.appService.getEnvironment();
+    return `Environment: ${environment} - Database Time: ${timestamp}`;
   }
 }
