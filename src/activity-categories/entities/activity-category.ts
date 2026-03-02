@@ -7,10 +7,11 @@ import {
   TreeParent,
   BeforeInsert,
   PrimaryGeneratedColumn,
-  JoinColumn,
+  Tree,
 } from 'typeorm';
 
 @Entity()
+@Tree('closure-table')
 export class ActivityCategory {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -28,6 +29,5 @@ export class ActivityCategory {
   children: ActivityCategory[];
 
   @TreeParent()
-  @JoinColumn({ name: 'parent_id' })
   parent: ActivityCategory;
 }
