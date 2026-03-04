@@ -1,0 +1,22 @@
+info:
+  name: create-activity-category
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://127.0.0.1:3000/activity-categories
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Coffee Shops",
+        "parentId": "019cb662-0593-7110-9365-a9ae01b6137a"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
